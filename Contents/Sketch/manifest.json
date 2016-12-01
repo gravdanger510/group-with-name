@@ -1,0 +1,24 @@
+{
+  "author" : "",
+  "commands" : [
+    {
+      "script" : "script.cocoascript",
+      "name" : "Group With Name",
+      "handlers" : {
+        "run" : "onRun"
+      },
+      "identifier" : "com.bohemiancoding.sketch.runscriptidentifier"
+    }
+  ],
+  "menu" : {
+    "items" : [
+      "com.bohemiancoding.sketch.runscriptidentifier"
+    ],
+    "title" : "Group With Name"
+  },
+  "identifier" : "com.example.sketch.dacc8948-31c0-4ed3-99f0-eb3030b30858",
+  "version" : "1.0",
+  "description" : "",
+  "authorEmail" : "",
+  "name" : "Group With Name"
+}

@@ -1,0 +1,34 @@
+var onRun = function(context) {
+  function groupName(){
+    //Get Selection
+    var sketch = context.api()
+    var document = sketch.selectedDocument
+    var page = document.selectedPage
+    var selection = document.selectedLayers
+
+    //Dialogue Box
+    var inputBox = NSTextField.alloc().initWithFrame(NSMakeRect(0,0,200,25))
+    inputBox.isEditable = true
+    inputBox.placeholderString = "Unnamed Group"
+
+    var alert= NSAlert.alloc().init()
+    alert.setMessageText('New Group Name:')
+    alert.addButtonWithTitle('Create')
+    alert.addButtonWithTitle('Cancel')
+    alert.setAccessoryView(inputBox)
+
+    var responseCode = alert.runModal()
+
+    var layer = context.selection.objectAtIndex(1)
+    log(layer)
+    var group = page.newGroup({name:inputBox.stringValue()})
+
+    selection.iterate(function(item) {
+        log(item.name)
+        item.parent = group
+    })
+}
+
+log(groupName())
+
+};
